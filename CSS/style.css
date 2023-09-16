@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
-.container h1 {
+body {
   font-family: 'Raleway', sans-serif;
+  background: #e0e0e0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.container {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 7rem);
+  position: relative;
+  font-weight: normal;
+  &::before {
+    content: '';
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    font-size: 30rem;
+    opacity: 0.1;
+    top: -0.3em;
+    left: -0.2em;
+    z-index: -1;
+  }
 }
